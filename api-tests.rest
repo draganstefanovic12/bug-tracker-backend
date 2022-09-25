@@ -1,0 +1,55 @@
+//Creates a new project
+POST http://localhost:5000/projects/new
+Content-Type: application/json
+Authorization: "dragance eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE5MWM5M2I0OGYzNWQzMTQ0MmIyZTMiLCJpYXQiOjE2NjI1OTA3NTQsImV4cCI6MTY2MzE5NTU1NH0.pODJOsiATRSrNoyHmSQUSYYrAXi-Z1JVPN1QHOE5sRo 
+
+
+{
+    "name": "Cinema Log",
+    "assigned": ["dragance, dragg"],
+    "link": "www.kyo.com"
+}
+
+###
+
+POST http://localhost:5000/projects/ticket
+Content-Type: application/json
+Authorization: "dragance eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE5MWM5M2I0OGYzNWQzMTQ0MmIyZTMiLCJpYXQiOjE2NjI1OTA3NTQsImV4cCI6MTY2MzE5NTU1NH0.pODJOsiATRSrNoyHmSQUSYYrAXi-Z1JVPN1QHOE5sRo 
+
+{
+    "ticket": {"title":"Issue 5","submitter":"kyo","developer":"","status":"open", "project": "Bug Tracker", "description": "Backdrop image isnt full size on media pages", "priority": "Medium", "type": "Bugs/Errors", "comments": []},
+    "proj": "Bug Tracker"
+}
+
+
+###
+
+//Gets all projects
+GET http://localhost:5000/projects/all
+Authorization: "dragance eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE5MWM5M2I0OGYzNWQzMTQ0MmIyZTMiLCJpYXQiOjE2NjI1OTA3NTQsImV4cCI6MTY2MzE5NTU1NH0.pODJOsiATRSrNoyHmSQUSYYrAXi-Z1JVPN1QHOE5sRo 
+###
+
+//Deletes a project
+POST http://localhost:5000/projects/remove
+Content-Type: application/json
+
+{
+    "_id": "63190bbbe50dd87ef07c1b54"
+}
+
+###
+
+//Assign users to projects
+
+###
+
+POST http://localhost:5000/projects/comment
+Content-Type: application/json
+Authorization: "dragance eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzE5MWM5M2I0OGYzNWQzMTQ0MmIyZTMiLCJpYXQiOjE2NjI1OTA3NTQsImV4cCI6MTY2MzE5NTU1NH0.pODJOsiATRSrNoyHmSQUSYYrAXi-Z1JVPN1QHOE5sRo 
+
+
+{
+    "name": "Cinema Log",
+    "ticket": {"commenter": "kyo", "message": "Fixing the ticket"},
+    "title": "Issue 5"
+}
